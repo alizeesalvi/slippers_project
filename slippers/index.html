@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>LandingPage</title>
+</head>
+
+<body class="font-poppins p-0 m-0">
+
+  <nav>
+    <img class="logo w-100 h-200" src="img/moonlight.png" alt="Logo" />
+    <div class="rs m-t-20">
+      <img class="media w-50 h-50 m-r-10" src="img/instagram.png" alt="Logo" />
+      <img class="media w-50 h-50 m-r-10" src="img/facebook.png" alt="Logo" />
+    </div>
+  </nav>
+
+  <header class="m-b-150">
+    <div class="description">
+      <h1>MOON LIGHT</h1>
+      <p>Moon Light est une jeune marque de chausson lumineux née à Lyon.
+        Créée par 5 entrepreneurs français, Moon Light est la rencontre
+        improbable entre deux mondes pour réinventer un produit ancestral
+        en lui apportant un souffle de modernité. Nous conjuguons l’art de
+        la modernité sans pour autant négliger le confort de matières simples
+        et naturelles en vous promettant un produit de qualité fabriqué en France.
+      </p>
+      <button class="achat m-t-20 f-20">J'achète</button>
+    </div>
+    <div class="carousel p-r-100">
+      <div class="carousel__item carousel__item--visible">
+        <img src="img/ch1.png" alt="image" />
+      </div>
+      <div class="carousel__item">
+        <img src="img/ch2.png" alt="image" />
+      </div>
+      <div class="carousel__item">
+        <img src="img/ch3.png" alt="image" />
+      </div>
+
+      <div class="carousel__actions w-200 m-b-100">
+        <button id="carousel__button--prev" class="m-l-20 h-40"> <img src=img/chevron-left.png alt="image"></button>
+        <button id="carousel__button--next" class="m-r-20 h-40"> <img src=img/chevron-right.png alt="image"></button>
+      </div>
+
+      <script>
+        let slidePosition = 0;
+        const slides = document.getElementsByClassName('carousel__item');
+        const totalSlides = slides.length;
+
+        document.
+          getElementById('carousel__button--next')
+          .addEventListener("click", function () {
+            moveToNextSlide();
+          });
+        document.
+          getElementById('carousel__button--prev')
+          .addEventListener("click", function () {
+            moveToPrevSlide();
+          });
+
+        function updateSlidePosition() {
+          for (let slide of slides) {
+            slide.classList.remove('carousel__item--visible');
+            slide.classList.add('carousel__item--hidden');
+          }
+
+          slides[slidePosition].classList.add('carousel__item--visible');
+        }
+
+        function moveToNextSlide() {
+          if (slidePosition === totalSlides - 1) {
+            slidePosition = 0;
+          } else {
+            slidePosition++;
+          }
+
+          updateSlidePosition();
+        }
+
+        function moveToPrevSlide() {
+          if (slidePosition === 0) {
+            slidePosition = totalSlides - 1;
+          } else {
+            slidePosition--;
+          }
+
+          updateSlidePosition();
+        }
+      </script>
+      </div>
+  </header>
+
+  <section>
+    <div class="first-block">
+      <h2 class="m-t-100 f-40">Top 3 des raisons d'adopter MOON LIGHT</h2>
+      <div class="reason m-b-100">
+        <div class="first-reason m-r-100 m-l-100">
+          <h3>Son confort</h3>
+          <p>Ces temps-ci on mise plutôt sur des tenues confortables
+            pour pouvoir télé-travailler ou trainer à la maison, comme
+            les ensembles en laine ou en maille, les pyjamas ou les joggings.
+            Et quoi de mieux qu’une bonne paire de chaussons pour être au maximum du
+            confort ?</p>
+        </div>
+        <div class="second-reason m-r-100 m-l-100">
+          <h3>Le MADE IN FRANCE</h3>
+          <p>La pantoufle, synonyme de chausson, est douce, ultra confortable et chaude.
+            En coton bio et en laine, les chaussons lumineux Moon Light
+            sont fabriqués à partir de 80% de matières premières provenant de l’Hexagone.</p>
+        </div>
+        <div class="third-reason m-r-100 m-l-100">
+          <h3>Sa technologie</h3>
+          <p>Allumez vos phares de chaussons quand vous vous baladez la nuit dans la maison !
+            Un gadget insolite et génial : des chaussons mules avec une lumière intégrée,
+            oui des chaussons à lampe torche avec une petite lampe LED intégrée au bout du chausson.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="second-block m-100">
+      <div class="texte m-l-50 m-r-50">
+        <h2 class="f-40">Moon Light, on met son pied dedans et ça s'allume !</h2>
+        <p class="f-20">
+          Ne plus réveiller sa femme, son conjoint ou ses enfants
+          lorsque l'on se lève pendant de la nuit. Eclairent à plus de
+          6 mètres. </p>
+      </div>
+      <iframe width="926" height="521" src="https://www.youtube.com/embed/gshZENud09A" title="Séquence 01 1"
+       ></iframe>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="third-block m-b-100">
+      <h2 class="m-t-100 f-40">Envie d'en savoir plus ?</h2>
+      <p>Inscrivez-vous pour être informé des dernières actualités MOON LIGHT.</p>
+      <form method="get" class="form h-100 m-t-50">
+        <div>
+          <label class="f-20" for="name">Entrer votre nom: </label>
+          <input class="w-200" type="text" name="name" id="name">
+        </div>
+        <div>
+          <label class="f-20" for="email">Entrer votre email: </label>
+          <input class="w-200" type="email" name="email" id="email">
+        </div>
+        <div>
+          <button class="m-t-20">Je m'inscris</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="p-100 f-20">
+    <img class="logo w-100 h-200 m-b-50" src="img/moonlight.png" alt="Logo" />
+    <ul>
+      <li class="bold">COMPAGNIE</li>
+    </ul>
+    <ul>
+      <li class="bold">COMMUNAUTÉS</li>
+    </ul>
+    <ul>
+      <li class="bold">LIENS UTILES</li>
+    </ul>
+  </footer>
+</body>
+
+</html>

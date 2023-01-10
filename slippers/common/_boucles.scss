@@ -1,0 +1,61 @@
+$fonts : (poppins : "Poppins",
+);
+
+@each $key,
+$value in $fonts {
+    .font-#{$key} {
+        font-family: $value, sans-serif;
+    }
+}
+
+
+$sizes: (
+    0: 0,
+    10:10px,
+    20:20px,
+    40:40px,
+    50:50px,
+    100:100px,
+    200:200px,
+);
+
+@each $property,
+$value in $sizes {
+
+    .m-#{$property} {
+        margin: $value;
+    }
+
+    .w-#{$property} {
+        width: $value;
+    }
+
+    .h#{$property} {
+        height: $value;
+    }
+
+    .m-l-#{$property} {
+        margin-left: $value;
+    }
+
+    .m-r-#{$property} {
+        margin-right: $value;
+    }
+
+    .m-t-#{$property} {
+        margin-top: $value;
+    }
+
+    .m-b-#{$property} {
+        margin-bottom: $value;
+    }
+
+    .p-r-#{$property} {
+        padding-right: $value;
+    }
+
+    .f-#{$property} {
+        font-size: $value;
+    }
+}
+
